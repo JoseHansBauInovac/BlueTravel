@@ -1,0 +1,69 @@
+Problemática: 
+
+El recorrido o visita a lugares nuevos se vio severamente afectado por la pandemia Global de SARS-COV-2 (COVID-19). 
+Afortunadamente gracias a los esfuerzos conjuntos de gobiernos y laboratorios de todo el mundo surgieron vacunas que si bien no curan el COVID, 
+permiten hacerlo más llevadero. 
+Esto último permitió relajar las medidas sanitarias, permitiéndonos después de casi dos años de restricciones y no podernos desplazar como normalmente lo hacíamos, 
+volver a una nueva normalidad. Si bien gran parte de la población ha sido vacunada, el riesgo de contagio es latente y real, sin embargo, 
+la economía no puede parar, ya que por la experiencia de hace un año cuando gran parte de la industria se detuvo creo un impacto severo a 
+la inflación de varios países incluido el nuestro. 
+
+La población en general puede tener las primeras vacaciones "normales" gracias a la vacuna, no obstante, las aglomeraciones, 
+lugares que por distintas situaciones no pueden tener una ventilación adecuada, casos confirmados y otros factores que posibilitan el contagio, 
+están dando pie a una cuarta oleada. 
+
+Propuesta: 
+
+Una aplicación que utilizando análisis de datos, determine el porcentaje de posibilidades de contagio, emita un estimado de personas presentes en el lugar, 
+si el lugar cuenta con buena ventilación, el número de casos positivos en el lugar y las proximidades, la interacción de los lugares, el flujo de las personas, 
+y el recorrido normal y durante temporada vacacional, los horarios donde hay más presencia de personas.  
+Usando múltiples datos creara un porcentaje de posibilidad, emitirá recomendaciones y monitoreara el destino para proponer un horario donde sea seguro asistir, 
+y así permitir que todos asistan. Que la empresas también no tengan la necesidad de exponer a sus empleados a un contagio y por ende verse en 
+la necesidad de tener que cerrar. 
+A diferencia de otras aplicaciones que muestran la afluencia de personas e determinados horarios y dias, 
+esta aplicación, monitoreara el lugar seleccionado y también emitiría a los que se encuentran en el lugar una alerta de aglomeración y de riesgo partir 
+de cierto porcentaje.  
+
+ 
+
+Requisitos/Variables/datos requeridos: 
+
+Lugar: es un edificio, es un parque, es una casa con jardines, centro comercial, supermercado, salas de cine, playa, hotel. 
+
+Horarios: horarios de apertura/cierre, hora del día,  tiempo estimado de permanencia 
+
+Temperatura: si el lugar cuenta con ventilación adecuada. 
+
+Capacidad de personas 
+Casos confirmados en las proximidades, en el lugar. 
+Medidas sanitarias implementadas, uso de cubrebocas obligatorio. 
+
+Puntos de origen de los visitantes, casos confirmados, pruebas PCR. 
+
+Si los visitantes tienen su esquema completo de vacunación. 
+
+Edad de los visitantes, en función de este dato que tanto porcentaje acata las indicaciones de sanidad.  
+
+Podríamos poner al ingresar al bar, restaurante o lugar donde accedan las personas un código Qr, 
+que lo escanee su celular y ese sea su código de acceso, que al momento de leerlo sepamos quien está dentro cuantificando 
+los que entran y los que salen y esos datos se vayan a una base de datos que nos digan que tan llenos están los lugares y con eso solucionar ese punto, 
+además para darlos de alta en la aplicación al restaurante deberán enviarnos fotografías del lugar para saber cómo catalogarlo, 
+como abierto, cerrado, el nivel de riesgo y eso se vaya a la app del usuario para saber que tan seguro es el lugar y bajo su riesgo ingresar a esos lugares 
+y para dar de alta a los usuarios les pediríamos llenen un cuestionario sobre indicios de COVID, 
+y un chatbot al finalizar su viaje 1 semana después si presentaron algún tipo de síntoma o si presentaron COVID 
+y alertar a los demás usuarios que estuvieron en ese lugar. 
+
+ 
+
+El ChatBot podemos hacerlo con Azure Bot service 
+
+La base de datos la podríamos tener en Azure SQL Database para satisfacer la demanda de todos nuestros clientes o podríamos gestionarlos en MySQL si tuviéramos 
+ya un conjunto de clientes 
+Nos podríamos basar en Azure Blob Storage para respaldar nuestra base de datos, 
+aunque estoy pensando que un Disk storage sería suficiente porque los datos se deben actualizar constantemente, 
+podríamos darles almacenamiento únicamente de 2 meses y se podrían borrar, ya que no utilizamos información a largo plazo, 
+únicamente la necesitamos para saber si hay contagios o no, más no planeamos el manejo de información sensible, 
+incluso podríamos colocar en la app que ellos se pongan un apodo, para evitar críticas en caso de que alguien resulte contagiado. 
+
+Por ultimo podemos basarnos en GitHub si quieren tener el codigo abierto o para mayor entendimiento de todos podemos usar logic apps y a partir de ahí 
+creamos nuestros flujos 
